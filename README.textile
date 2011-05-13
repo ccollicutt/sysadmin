@@ -3,3 +3,17 @@ h1. centos.sh
 This script will, assuming a whole bunch of things are setup as it expects, be able to create a CentOS virtual machine on both Ubuntu 10.04 + kvm and Centos 5.6 + xen dom0s using a combination of mrepo, kickstarts, virt-install, and lvm.
 
 Why? Well, because that's what I have--a Lucid workstation and a CentOS 5 test server. I want to be able to easily create CentOS 5 servers on both of these systems in order to build a test, or perhaps better termed learning, network .
+
+h1. dejabootstrap.sh
+
+This script will create as many vms as you want, half going to a kvm dom0 and half going to a xen dom0 server.
+
+It requires a lot of "stuff" to be setup "properly", but it should be fairly obvious where to put what. I'm sorry it's messy.  The big things are:
+
+# "kicker":https://github.com/curtisgithub/kicker
+## Which requires a http available place to put kickstarts
+# "centos.sh":https://github.com/curtisgithub/sysadmin/blob/master/centos.sh and it's configuration file
+# A kvm dom0 and a xen dom0 setup with ssh access from where the script is run from.
+## Each having a volume group with the same name, eg. "/dev/vm"
+# DNS entries for each $HOSTPREFIX$s.$DOMAIN that is being created
+
