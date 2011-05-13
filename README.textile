@@ -1,0 +1,5 @@
+h1. centos.sh
+
+This script will, assuming a whole bunch of things are setup as it expects, be able to create a CentOS virtual machine on both Ubuntu 10.04 + kvm and Centos 5.6 + xen dom0s using a combination of mrepo, kickstarts, virt-install, and lvm.
+
+Why? Well, because that's what I have--a Lucid workstation and a CentOS 5 test server. I want to be able to easily create CentOS 5 servers on both of these systems in order to build a test, or perhaps better termed learning, network .
